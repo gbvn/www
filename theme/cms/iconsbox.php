@@ -1,0 +1,1 @@
+<?php include_once DIR_NEWS."MS_NEWS_0003.php";  ?>

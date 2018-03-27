@@ -1,0 +1,197 @@
+/*MENU DESKTOP*/
+.uni-main-menu{
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  .main-menu{
+    position:  relative;
+  }
+  .cssmenu,
+  .cssmenu ul,
+  .cssmenu ul li,
+  .cssmenu ul li a,
+  .cssmenu #menu-button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .cssmenu:after,
+  .cssmenu > ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  .cssmenu #menu-button {
+    display: none;
+  }
+  .cssmenu {
+    width: auto;
+    font-family: $monserrat;
+    line-height: 1;
+    @media screen and (max-width: 991px) {
+      display:  none;
+    }
+  }
+  .cssmenu > ul > li {
+    float: left;
+  }
+  .cssmenu.align-center > ul {
+    font-size: 0;
+    text-align: center;
+  }
+  .cssmenu.align-center > ul > li {
+    display: inline-block;
+    float: none;
+  }
+  .cssmenu.align-center ul ul {
+    text-align: left;
+  }
+  .cssmenu.align-right > ul > li {
+    float: right;
+  }
+  .cssmenu.align-right ul ul {
+    text-align: right;
+  }
+  .cssmenu > ul > li > a {
+    font-family: $monserrat;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: $color11;
+    padding: 31px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .2s ease;
+    @media screen and (min-width: 992px) and (max-width:  1199px) {
+      font-size: 11px;
+      padding: 45px 10px;
+    }
+  }
+  .cssmenu > ul > li:hover > a,
+  .cssmenu > ul > li.active > a {
+    color: #fcae1d;
+  }
+  .cssmenu > ul > li.has-sub > a {
+    padding-right: 25px;
+    &:hover{
+      &:before{
+        content: '';
+        display:  block;
+      }
+    }
+  }
+  .cssmenu > ul > li.has-sub > a::after {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    width: 4px;
+    height: 4px;
+    border-bottom: 1px solid $color10;
+    border-right: 1px solid $color10;
+    content: "";
+    transform: rotate(45deg);
+    transition: border-color 0.2s ease;
+  }
+  .cssmenu > ul > li.has-sub:hover > a::after {
+    border-color: #fcae1d;
+  }
+  .cssmenu ul ul {
+    position: absolute;
+    left: -9999px;
+    z-index: 2;
+    background: $color3;
+    box-shadow: 0 0 10px 0 $color9;
+  }
+  .cssmenu li:hover > ul {
+    left: auto;
+  }
+  .cssmenu.align-right li:hover > ul {
+    right: 0;
+  }
+  .cssmenu ul ul ul {
+    margin-left: 100%;
+    top: 0;
+    background: $color3;
+    box-shadow: 0 0 10px 0 $color9;
+  }
+  .cssmenu ul ul ul li a{
+    color: $color6;
+    border-top: 1px solid $color7;
+  }
+  .cssmenu.align-right ul ul ul {
+    margin-left: 0;
+    margin-right: 100%;
+  }
+  .cssmenu ul ul li {
+    height: 0;
+    transition: height .2s ease;
+  }
+  .cssmenu ul li:hover > ul > li {
+    height: 48px;
+  }
+  .cssmenu ul ul li a {
+    display: block;
+    font-family: $monserrat;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: left;
+    color: $color6;
+    padding: 12px 20px;
+    min-width: 240px;
+    background: transparent;
+    border-top: 1px solid $color7;
+    text-decoration: none;
+    transition: color .2s ease;
+  }
+  .cssmenu ul ul li:first-child{
+    a{
+      border-top: none;
+    }
+  }
+  .cssmenu ul ul li:hover > a,
+  .cssmenu ul ul li a:hover {
+    color: $color3;
+    background: $color1;
+  }
+  .cssmenu ul ul li.has-sub > a::after {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 4px;
+    height: 4px;
+    border-bottom: 1px solid $color4;
+    border-right: 1px solid $color4;
+    content: "";
+    transform: rotate(-45deg);
+    transition: border-color 0.2s ease;
+  }
+  .cssmenu.align-right ul ul li.has-sub > a::after {
+    right: auto;
+    left: 10px;
+    border-bottom: 0;
+    border-right: 0;
+    border-top: 1px solid $color5;
+    border-left: 1px solid $color5;
+  }
+  .cssmenu ul ul li.has-sub:hover > a::after {
+    border-color: $color3;
+  }
+}
